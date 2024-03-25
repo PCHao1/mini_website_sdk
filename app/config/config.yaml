@@ -1,0 +1,6 @@
+DEFAULT_LANG: en
+COMPANY_NAME: Company Name
+FAVICON_ICON_LINK: link
+ADMIN:
+  NAME: pchao
+  PASS: pchao123
