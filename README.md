@@ -1,4 +1,4 @@
-# Medium website Template
+# Medium website template
 
 ## Description
 
@@ -24,7 +24,7 @@ This codebase requires PHP version 7 or later, and the SQLite PHP library must b
 
 ### Multiple Language Support
 
-The repository supports multiple languages for internationalization. Translation files are stored in the config/ folder with the naming convention lang-_.yaml, where _ represents the language code (e.g., en, vi, etc.). The default language is set in the DEFAULT_LANG configuration.
+The repository supports multiple languages for internationalization. Translation files are stored in the config folder with the naming convention `lang-_.yaml`, where `_` represents the language code (e.g., en, vi, etc.). The default language is set in the `DEFAULT_LANG` configuration.
 
 You can use translations anywhere in your view files by utilizing the provided translation function:
 
@@ -41,6 +41,7 @@ One of the advantages of this repository is the inclusion of a lightweight datab
 - selectMulti
 - query
 - queryPrepare
+
   You can find detailed descriptions of these methods in the init/model.php file.
 
 ## How to implementing New Features
@@ -59,6 +60,7 @@ $this->get('/admin', [
 ```
 
 In this example, the feature is accessible via the GET HTTP method at the /admin path. It is implemented in the `home` controller within the `admin` module, and the page title is set to "Admin Page".
+
 2. Implement the corresponding controller, model, and view files for your feature, following the MVC pattern.
 
 ---
