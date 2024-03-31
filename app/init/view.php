@@ -3,7 +3,7 @@ require_once APP_PATH . '/app/libraries/load_yaml.php';
 class View
 {
 	public $moduleName;
-	public $data;
+	public $data = array();
 	public $t; // language
 
 	public function __construct()
@@ -20,6 +20,13 @@ class View
 		$contentFile = APP_PATH . '/app/' . $this->moduleName . '/views/' . $fileName . '.php';
 
 		include_once APP_PATH . '/app/' . $this->moduleName . '/views/index.php';
+	}
+
+	public function forceReader($fileName)
+	{
+		$contentFile = APP_PATH . '/app/' . $this->moduleName . '/views/' . $fileName . '.php';
+
+		include_once $contentFile;
 	}
 
 	// Load translations

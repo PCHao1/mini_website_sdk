@@ -21,6 +21,20 @@ class Router{
 				'action'	=> 'home'
 			]
 		);
+		$this->get('/login',
+			[
+				'module'	=> 'admin',
+				'controller'=> 'authentication',
+				'action'	=> 'login'
+			]
+		);
+		$this->post('/logout',
+			[
+				'module'	=> 'admin',
+				'controller'=> 'authentication',
+				'action'	=> 'logout'
+			]
+		);
 
 		// APIs
 

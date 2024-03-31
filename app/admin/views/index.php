@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin page</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="/public/js/script.js"></script>
   <style>
     /* Add any additional styles here */
   </style>
@@ -20,7 +22,7 @@
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill="currentColor"></path>
         <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" fill="currentColor"></path>
       </svg>
-      <span class="text-white font-semibold">Company</span>
+      <span class="text-white font-semibold"><?php echo GLOB_VAR['COMPANY_NAME']?></span>
     </div>
     <nav class="h-[80vh]">
       <ul>
@@ -84,10 +86,20 @@
         </li>
       </ul>
     </nav>
-    <div class="mt-auto flex items-center">
-      <img src="https://via.placeholder.com/40" alt="User Avatar" class="rounded-full mr-2">
+    <div class="mt-auto flex justify-center items-center">
+      <div class="rounded-full mr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+      </div>
+
       <span class="text-gray-400">
-        <?php echo $this->t("Admin") ?></span>
+        <?php echo GLOB_VAR['ADMIN_NAME'] ?>
+      </span>
+      <button class="hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-flex items-center" onclick="logout()"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+        </svg>
+      </button>
     </div>
   </div>
 
