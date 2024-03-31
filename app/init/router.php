@@ -1,46 +1,54 @@
 <?php
-class Router{
+class Router
+{
 	public $routers = [];
 
 	public function __construct()
 	{
 		// Consumer page
-		$this->get('/',
+		$this->get(
+			'/',
 			[
 				'module'	=> 'default',
-				'controller'=> 'home',
-				'action'	=> 'home'
+				'controller' => 'home',
+				'action'	=> 'home',
+				'title'		=> 'Home Page'
 			]
 		);
 
 		// Admin page
-		$this->get('/admin',
+		$this->get(
+			'/admin',
 			[
 				'module'	=> 'admin',
-				'controller'=> 'home',
-				'action'	=> 'home'
+				'controller' => 'home',
+				'action'	=> 'home',
+				'title'		=> 'Admin Page'
 			]
 		);
-		$this->get('/login',
+		$this->get(
+			'/login',
 			[
 				'module'	=> 'admin',
-				'controller'=> 'authentication',
-				'action'	=> 'login'
-			]
-		);
-		$this->post('/logout',
-			[
-				'module'	=> 'admin',
-				'controller'=> 'authentication',
-				'action'	=> 'logout'
+				'controller' => 'authentication',
+				'title'		=> 'Login Page',
+				'action'	=> 'login',
 			]
 		);
 
 		// APIs
-
+		$this->post(
+			'/logout',
+			[
+				'module'	=> 'admin',
+				'controller' => 'authentication',
+				'action' => 'logout',
+			]
+		);
 	}
 
-	public function get($url = '', $routing = ['module' => '','controller' => '', 'action' => '']){
+	public function get($url = '', $routing = ['module' => '', 'controller' => '', 'action' => ''])
+	{
 		$this->routers[] = [
 			'method'	=> 'GET',
 			'url' 		=> $url,
@@ -48,7 +56,8 @@ class Router{
 		];
 	}
 
-	public function post($url = '', $routing = ['module' => '','controller' => '', 'action' => '']){
+	public function post($url = '', $routing = ['module' => '', 'controller' => '', 'action' => ''])
+	{
 		$this->routers[] = [
 			'method'	=> 'POST',
 			'url' 		=> $url,

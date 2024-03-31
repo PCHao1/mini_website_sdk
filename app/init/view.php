@@ -3,7 +3,7 @@ require_once APP_PATH . '/app/libraries/load_yaml.php';
 class View
 {
 	public $moduleName;
-	public $data = array();
+		public $data = array();
 	public $t; // language
 
 	public function __construct()
@@ -13,7 +13,7 @@ class View
 		if (file_exists($languagePath)) {
 			$this->t = load_yaml_file($languagePath);
 		}
-	}
+			}
 
 	public function render($fileName)
 	{
